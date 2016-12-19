@@ -61,16 +61,87 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupsForm.Designer.cs">
+      <DependentUpon>GroupsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KidsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KidsForm.Designer.cs">
+      <DependentUpon>KidsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KindergartenDBDataSet.cs">
+      <DependentUpon>KindergartenDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="KindergartenDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KindergartenDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentsForm.Designer.cs">
+      <DependentUpon>ParentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostsForm.Designer.cs">
+      <DependentUpon>PostsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupsForm.resx">
+      <DependentUpon>GroupsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KidsForm.resx">
+      <DependentUpon>KidsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentsForm.resx">
+      <DependentUpon>ParentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostsForm.resx">
+      <DependentUpon>PostsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +152,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="KindergartenDBDataSet.xsc">
+      <DependentUpon>KindergartenDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KindergartenDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KindergartenDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="KindergartenDBDataSet.xss">
+      <DependentUpon>KindergartenDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,7 +178,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="KindergartenDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="KindergartenDB_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>KindergartenDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
