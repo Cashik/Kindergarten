@@ -38,55 +38,6 @@ namespace Kindergarten
             ChildOfParentRB.Select();
         }
 
-        private void fillBySelectedParentIdToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillBySelectedParentIdToolStripButton1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.parentTableAdapter.Fill(this.kindergartenDBDataSet.Parent);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
-        {
-            UpdateChildDGV();
-
-
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
@@ -104,7 +55,7 @@ namespace Kindergarten
 
         private void Parents_dgv_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-          
+            UpdateChildDGV();
         }
 
         private void Parents_dgv_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -129,15 +80,7 @@ namespace Kindergarten
             }
         }
 
-        private void ChildOfParentRB_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateChildDGV();
-        }
 
-        private void NotChildOfParentRB_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateChildDGV();
-        }
 
         // метод обновения детей
         private void UpdateChildDGV()
@@ -161,6 +104,15 @@ namespace Kindergarten
             }
         }
 
+        private void ChildOfParentRB_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateChildDGV();
+        }
+
+        private void NotChildOfParentRB_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateChildDGV();
+        }
         private void Parents_dgv_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
             //if ( Parents_dgv.CurrentRow.Index < (Parents_dgv.RowCount - 1))
@@ -200,6 +152,16 @@ namespace Kindergarten
         {
             DataGridViewRow ThisDataRow = ((DataGridView)sender).CurrentRow;
                 ThisDataRow.Cells["id"].Value = Guid.NewGuid();
+        }
+
+        private void Parents_dgv_Enter(object sender, EventArgs e)
+        {
+            UpdateChildDGV();
+        }
+
+        private void Parents_dgv_CurrentCellChanged(object sender, EventArgs e)
+        {
+            UpdateChildDGV();
         }
     }
 }

@@ -100,12 +100,13 @@
             this.Parents_dgv.TabIndex = 0;
             this.Parents_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.Parents_dgv.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.Parents_dgv_CellValueChanged);
-            this.Parents_dgv.CurrentCellChanged += new System.EventHandler(this.dataGridView1_CurrentCellChanged);
+            this.Parents_dgv.CurrentCellChanged += new System.EventHandler(this.Parents_dgv_CurrentCellChanged);
             this.Parents_dgv.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Parents_dgv_RowEnter);
             this.Parents_dgv.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.Parents_dgv_RowLeave);
             this.Parents_dgv.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Parents_dgv_RowsAdded);
             this.Parents_dgv.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.Parents_dgv_RowStateChanged);
             this.Parents_dgv.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.Parents_dgv_UserRowsAdded);
+            this.Parents_dgv.Enter += new System.EventHandler(this.Parents_dgv_Enter);
             // 
             // id
             // 

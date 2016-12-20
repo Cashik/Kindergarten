@@ -7077,7 +7077,7 @@ WHERE        (Child_of_parent.parent_id = @selectedParentId)";
             this._commandCollection[2].CommandText = @"SELECT DISTINCT id, name, surname, DOB,
                              (SELECT        name
                                FROM            [Group]
-                               WHERE        (id = Child.group_id)) AS Expr1
+                               WHERE        (id = Child.group_id)) AS group_name
 FROM            Child
 WHERE        (id NOT IN
                              (SELECT DISTINCT child_id

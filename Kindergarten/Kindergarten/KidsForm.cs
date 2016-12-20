@@ -79,13 +79,20 @@ namespace Kindergarten
 
         private void saveChildren_Click(object sender, EventArgs e)
         {
+            // редактирование заканчиваются
+            // и в таблицу заносятся актуальные данные
             children_dsv.EndEdit();
             childBindingSource.EndEdit();
             
+            // получаем все изменения
             DataSet changes = this.kindergartenDBDataSet.GetChanges();
+
             if (changes != null)
             {
-                int updatedRows = childTableAdapter.Adapter.Update(changes);
+                // в случае сущестования изменений
+                // отсылаем изменения в базу через адаптер
+                // и перезаполняем таблицу в приложении 
+                childTableAdapter.Adapter.Update(changes);
                 childTableAdapter.Fill(kindergartenDBDataSet.Child);
             }
         }
